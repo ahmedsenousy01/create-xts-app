@@ -6,7 +6,10 @@ module.exports = (api) => {
       ["babel-preset-expo", { jsxImportSource: "nativewind" }],
       "nativewind/babel",
     ],
-    plugins: ["react-native-reanimated/plugin"],
-    // TODO: check for async generators plugin
+    plugins: [
+      "react-native-reanimated/plugin",
+      ["@babel/plugin-transform-runtime", { regenerator: true }],
+      "@babel/plugin-transform-async-generator-functions",
+    ],
   };
 };
